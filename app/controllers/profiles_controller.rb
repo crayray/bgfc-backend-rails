@@ -9,8 +9,11 @@ class ProfilesController < ApplicationController
   end
 
   # GET /profiles/1
+  # from this: https://medium.com/@jennyjean8675309/connect-your-react-application-to-a-rails-api-using-active-storage-part-1-e59dcacc481b
   def show
-    render json: @profile
+    profile= Profile.find_by(name: params[:name])
+    avatar= rails_blob_path(profile.avatar)
+    render json: {user: user, avatar: avatar}
   end
 
   # POST /profiles

@@ -22,3 +22,10 @@ rsvp1= Rsvp.create(user_id:rachel.id, event_id:casacolumbia.id)
 
 #Restaurants
 restaurant1 = Restaurant.create(about:"Columbian Food", address:'E 7th street', yelp:"Yelp URL", google:"google url", site: "site url", event_id: casacolumbia.id)
+
+#Avatar photo
+rachelProfile.avatar.attach(
+    io: File.open('./public/avatars/Winner.jpg'),
+    filename: "Winner.jpg",
+    content_type: 'application/jpg'
+)
