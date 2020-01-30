@@ -3,14 +3,15 @@ class EventsController < ApplicationController
 
   # GET /events
   def index
-    @events = Event.all
+    events = Event.all
 
-    render json: @events
+    render json: {events: events}
   end
 
   # GET /events/1
   def show
-    render json: @event
+    event= Event.find_by(id: params[:id])
+    render json: {event: event}
   end
 
   # POST /events

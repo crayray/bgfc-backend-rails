@@ -3,14 +3,15 @@ class RsvpsController < ApplicationController
 
   # GET /rsvps
   def index
-    @rsvps = Rsvp.all
+   rsvps = Rsvp.all
 
-    render json: @rsvps
+    render json: {rsvps: rsvps}
   end
 
   # GET /rsvps/1
   def show
-    render json: @rsvp
+    rsvps = Rsvp.all
+    render json: {rsvps: rsvps}
   end
 
   # POST /rsvps
