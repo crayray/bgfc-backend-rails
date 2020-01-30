@@ -13,6 +13,7 @@ class ProfilesController < ApplicationController
   def show
     profile= Profile.find_by(id: params[:id])
     avatar= rails_blob_path(profile.avatar)
+    # profile["avatar"] = avatar
     render json: {profile: profile, avatar: avatar}
   end
 
