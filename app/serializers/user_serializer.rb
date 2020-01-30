@@ -1,6 +1,7 @@
 class UserSerializer < ActiveModel::Serializer
     attributes :id, :name
     has_one :profile, serializer: ProfileSerializer
+    has_many :events
     # has_many :user_teams, serializer: UserTeamSerializer
 
 #     def profiles
