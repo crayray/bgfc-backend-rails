@@ -4,5 +4,5 @@ class User < ApplicationRecord
     has_many :rsvps
     has_many :events, through: :rsvps
 
-    validates :email, uniqueness: { case_sensitive: false }
+    validates :username, uniqueness: { case_sensitive: false }
 end
