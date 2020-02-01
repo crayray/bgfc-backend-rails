@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_30_204535) do
+ActiveRecord::Schema.define(version: 2020_02_01_212357) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,10 +44,15 @@ ActiveRecord::Schema.define(version: 2020_01_30_204535) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "interests", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "profiles", force: :cascade do |t|
     t.string "name"
     t.string "about"
-    t.string "interest1"
     t.string "instagram"
     t.string "facebook"
     t.string "twitter"
@@ -86,6 +91,8 @@ ActiveRecord::Schema.define(version: 2020_01_30_204535) do
     t.string "password_digest"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "interest_id"
+    t.index ["interest_id"], name: "index_users_on_interest_id"
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
@@ -93,4 +100,5 @@ ActiveRecord::Schema.define(version: 2020_01_30_204535) do
   add_foreign_key "restaurants", "events"
   add_foreign_key "rsvps", "events"
   add_foreign_key "rsvps", "users"
+  add_foreign_key "users", "interests"
 end

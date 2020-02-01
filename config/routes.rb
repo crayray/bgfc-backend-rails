@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  resources :interests
   resources :rsvps
   resources :restaurants
   resources :events
