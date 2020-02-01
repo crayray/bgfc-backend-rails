@@ -13,6 +13,7 @@ rachel= User.create(name:"rachel", email:"rach@gmail.com", password_digest: "123
 
 #Profiles
 rachelProfile= Profile.create(name:"rachel", about:"Super rad engineer", interest1:"Hiking", instagram:"hermione_g", facebook:"rachfuerst", twitter:"askmenever", linkedin: "rachfuerst",user_id: rachel.id)
+# profile= Profile.create(name:"rachel", about:"Super rad engineer", interest1:"Hiking", instagram:"hermione_g", facebook:"rachfuerst", twitter:"askmenever", linkedin: "rachfuerst",user_id: rachel.id)
 
 #Events
 casacolumbia= Event.create(date:"January 18th", time:"12:00PM", location_name:"Casa Columbia" )
