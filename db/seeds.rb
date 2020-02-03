@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 #Users
-rachel= User.create(name:"rachel", email:"rach@gmail.com", password_digest: "1234")
+rachel= User.create(username:"rachel", email:"rach@gmail.com", password_digest: "1234")
 
 
 
