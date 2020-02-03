@@ -1,5 +1,10 @@
 class ProfilesController < ApplicationController
-  before_action :set_profile, only: [:show, :update, :destroy]
+  # From me: testing with authorization on Profiles resource
+  # before_action :authorized
+
+  # Original:
+  # before_action :set_profile, only: [:show, :update, :destroy]
+
 
   # GET /profiles
   def index
