@@ -1,5 +1,6 @@
 class AuthController < ApplicationController
-    skip_before_action :authorized, only: [:create]
+  # Commented this out because it was causing issues with logging in on the front end:
+    # skip_before_action :authorized, only: [:create]
  
     def create
       @user = User.find_by(email: user_login_params[:email])
