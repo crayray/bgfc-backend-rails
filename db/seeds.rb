@@ -15,7 +15,10 @@ rachel= User.create(username:"rachel", email:"rach@gmail.com", password_digest: 
 rachelProfile= Profile.create(name:"rachel", about:"Super rad engineer", interest1:"Hiking", instagram:"hermione_g", facebook:"rachfuerst", twitter:"askmenever", linkedin: "rachfuerst",user_id: rachel.id)
 
 #Events
+galentines= Event.create(date:"February 16th", time:"12:00PM", location_name: "Galentines Potluck Brunch")
 casacolumbia= Event.create(date:"January 18th", time:"12:00PM", location_name:"Casa Columbia" )
+asters= Event.create(date:"December 14th", time: "6:30PM", location_name:"Asters Ethiopian")
+
 
 #Rsvps
 rsvp1= Rsvp.create(user_id:rachel.id, event_id:casacolumbia.id)
