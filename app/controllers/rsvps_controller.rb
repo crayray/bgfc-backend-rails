@@ -1,5 +1,6 @@
 class RsvpsController < ApplicationController
   before_action :set_rsvp, only: [:show, :update, :destroy]
+  
 
   # GET /rsvps
   def index
@@ -22,6 +23,7 @@ class RsvpsController < ApplicationController
       render json: @rsvp, status: :created, location: @rsvp
     else
       render json: @rsvp.errors, status: :unprocessable_entity
+      # render json: { error: 'failed to create user' }, status: :not_acceptable
     end
   end
 
