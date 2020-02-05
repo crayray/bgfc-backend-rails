@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :profiles
   resources :users
 
+  get 'rails/active_storage/direct_uploads', to: 'direct_uploads#index'
   post 'rails/active_storage/direct_uploads', to: 'direct_uploads#create'
   post '/login', to: 'auth#create'
   get '/profile', to: 'users#profile'

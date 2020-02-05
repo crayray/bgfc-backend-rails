@@ -8,9 +8,30 @@ class ProfilesController < ApplicationController
 
   # GET /profiles
   def index
-    @profiles = Profile.all
+   @profiles =  Profile.all
+ 
+  
+   mapped=  @profiles.map do |profile|
 
-    render json: @profiles
+    
+      {
+        profile_id: profile.id,
+        name: profile.name,
+        user_id: profile.user_id,
+        interest1: profile.interest1,
+        instagram: profile.instagram,
+        facebook: profile.facebook,
+        twitter: profile.twitter,
+        linkedin: profile.linkedin
+    
+
+      }
+      # byebug
+    end
+
+   
+
+    render json: {profiles: mapped}
   end
 
   # GET /profiles/1
