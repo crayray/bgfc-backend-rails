@@ -21,25 +21,45 @@ class ProfilesController < ApplicationController
     render json: {profile: profile, avatar: avatar}
   end
 
-  # POST /profiles
+  # POST /profiles (original)
+  # def create
+  #   @profile = Profile.new(profile_params)
+
+  #   if @profile.save
+  #     render json: @profile, status: :created, location: @profile
+  #   else
+  #     render json: @profile.errors, status: :unprocessable_entity
+  #   end
+  # end
+
+
   def create
     @profile = Profile.new(profile_params)
 
-    if @profile.save
-      render json: @profile, status: :created, location: @profile
+    if @profile.valid?
+      @profile.save
+        render json: @profile, status: :created, location: @profile
     else
       render json: @profile.errors, status: :unprocessable_entity
     end
   end
 
-  # PATCH/PUT /profiles/1
-  def update
-    if @profile.update(profile_params)
-      render json: @profile
-    else
-      render json: @profile.errors, status: :unprocessable_entity
-    end
-  end
+
+def update
+  profile= Profile.find(params[:id])
+  profile.update(avatar: params[:avatar])
+  avatar_url = rails_blob_path(profile.avatar)
+  render json: {profile: profile, avatar_url: avatar_url}
+end
+
+  # PATCH/PUT /profiles/1 original:
+  # def update
+  #   if @profile.update(profile_params)
+  #     render json: @profile
+  #   else
+  #     render json: @profile.errors, status: :unprocessable_entity
+  #   end
+  # end
 
   # DELETE /profiles/1
   def destroy
