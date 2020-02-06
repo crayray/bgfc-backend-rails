@@ -22,7 +22,8 @@ class ProfilesController < ApplicationController
         instagram: profile.instagram,
         facebook: profile.facebook,
         twitter: profile.twitter,
-        linkedin: profile.linkedin
+        linkedin: profile.linkedin,
+        about: profile.about
     
 
       }
