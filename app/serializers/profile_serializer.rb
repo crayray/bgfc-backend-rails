@@ -1,7 +1,7 @@
 class ProfileSerializer < ActiveModel::Serializer
   include Rails.application.routes.url_helpers
     attributes :id, :name, :interest1, :instagram, :facebook, :twitter, :linkedin, :user_id, :avatar
-    belongs_to :user
+    belongs_to :user, serializer: UserSerializer
 
   
     def avatar

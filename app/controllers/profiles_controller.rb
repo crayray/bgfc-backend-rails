@@ -28,11 +28,12 @@ class ProfilesController < ApplicationController
       }
       # byebug
     end
-
-   
-
-    render json: {profiles: mapped}
+    
+    render json: mapped
   end
+
+
+
 
   # GET /profiles/1
   # from this: https://medium.com/@jennyjean8675309/connect-your-react-application-to-a-rails-api-using-active-storage-part-1-e59dcacc481b
