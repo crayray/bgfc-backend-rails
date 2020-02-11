@@ -4,7 +4,7 @@ class RsvpsController < ApplicationController
 
   # GET /rsvps
   def index
-   rsvps = Rsvp.all
+   rsvps = Rsvp.all.where("event_id=#{params[:event_id]} and user_id=#{params[:user_id]}").joins(:user).select("users.*")
 
     render json: {rsvps: rsvps}
   end
@@ -25,6 +25,7 @@ class RsvpsController < ApplicationController
       render json: @rsvp.errors, status: :unprocessable_entity
       # render json: { error: 'failed to create user' }, status: :not_acceptable
     end
+
   end
 
   # PATCH/PUT /rsvps/1
