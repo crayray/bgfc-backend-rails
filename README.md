@@ -39,7 +39,7 @@ Seed the database to get the questions and answers:
 ```
 // ♥ rails db:seed
 ```
-Start the server and load the site on localhost:3000:
+Start the server and load the site on localhost:4000:
 ```
 // ♥ rails s
 ```
