@@ -11,13 +11,13 @@ Brown Girls Food Club App - Backend
 ---
 
 ## General info
-This is the  API for the [NBA Stats Tracker app](https://github.com/crayray/nba-stats-tracker-react). Please follow the installation steps here and then refer the frontend repo for more details. 
+This is the  API for the [Brown Girls Food Club app](https://github.com/crayray/bgfc-frontend-react). Please follow the installation steps here and then refer the frontend repo for more details. 
 
 
 ---
 
 ## Technologies
-This is a single page app that loads all data via Javascript/React on the front end. It retrieves data from our Ruby on Rails API. The data is stored in a PostgreSQL database. 
+This is a single page app that loads all data via React on the front end. It retrieves data from this Ruby on Rails API. The data is stored in a PostgreSQL database. 
 
 
 ## Requirements
@@ -47,12 +47,9 @@ Start the server and load the site on localhost:3000:
 ## Credits
 
 
-The humble developers who built this app:
+The humble developer who built this app:
 
 
 **Rachel Fuerst** [LinkedIn](https://www.linkedin.com/in/rachfuerst) // [Github](https://github.com/crayray)
 
-&
-
-**Mason Waller** [LinkedIn](https://www.linkedin.com/in/mason-waller-49a087196/) // [Github](https://github.com/masonwaller)
 
